@@ -2,12 +2,12 @@ import openai
 import streamlit as st
 from streamlit_chat import message
 
-openai.api_key = st.secrets["api_secret"]
+openai.api_key = st.secrets["secrets"]
 
 def generate_response(prompt):
     completions = openai.Completion.create(
-        engine = "text=davinici.003"
-        prompt = prompt, 
+        engine = "text-davinici-003",
+        prompt = prompt,
         max_tokens = 1024,
         n = 1, 
         stop = None,
